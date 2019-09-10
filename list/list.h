@@ -20,10 +20,15 @@ typedef struct list_t {
 }list_t;
 
 
-void initialize(list_t** l, fn_list_constructor_t constructor, fn_list_destructor_t destructor);
-
-
-void delete(list_t** l);
+void list_initialize(list_t** l, fn_list_constructor_t constructor, fn_list_destructor_t destructor);
+void list_access_position(list_t* l, int position, void* value_returned);
+void list_access_head(list_t* l, void* value_returned);
+void list_access_tail(list_t* l, void* value_returned);
+void list_remove_element(list_t* l, int position);
+void list_remove_tail(list_t* l);
+void list_remove_head(list_t* l);
+int list_empty(list_t *l);
+void list_delete(list_t** l);
 
 
 #endif
